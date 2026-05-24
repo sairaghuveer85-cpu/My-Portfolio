@@ -1,0 +1,1195 @@
+# Premium Developer Portfolio — Full Updated Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Raghuveer — Elite Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#050505;
+  --bg2:#0c0c12;
+  --card:#12121a;
+  --gold:#c9a84c;
+  --gold2:#f0d78d;
+  --text:#f5f1e8;
+  --muted:rgba(255,255,255,0.58);
+  --muted2:rgba(255,255,255,0.25);
+  --border:rgba(255,255,255,0.08);
+  --display:'Playfair Display',serif;
+  --sans:'Syne',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+body::-webkit-scrollbar{
+  width:10px;
+}
+
+body::-webkit-scrollbar-thumb{
+  background:var(--gold);
+}
+
+/* NAV */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:28px 80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
+  backdrop-filter:blur(18px);
+  background:rgba(5,5,5,0.45);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+  font-family:var(--display);
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.nav-links{
+  display:flex;
+  gap:42px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:700;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding:180px 80px 100px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;
+  bottom:-100px;
+  left:-20px;
+  font-size:320px;
+  font-weight:900;
+  opacity:.03;
+  font-family:var(--display);
+  letter-spacing:-14px;
+  pointer-events:none;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:120px;
+  align-items:center;
+}
+
+.hero-left{
+  position:relative;
+}
+
+.hero-left::before{
+  content:'';
+  position:absolute;
+  width:450px;
+  height:450px;
+  background:radial-gradient(circle,rgba(201,168,76,0.18),transparent 70%);
+  top:-140px;
+  left:-140px;
+  z-index:-1;
+}
+
+.hero-tag{
+  color:var(--gold);
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-bottom:36px;
+}
+
+.hero-title{
+  font-family:var(--display);
+  font-size:120px;
+  line-height:.82;
+  letter-spacing:-7px;
+  text-transform:uppercase;
+}
+
+.hero-title em{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.hero-desc{
+  font-size:18px;
+  line-height:2;
+  color:var(--muted);
+  max-width:580px;
+  border-left:1px solid rgba(255,255,255,0.1);
+  padding-left:30px;
+  margin-bottom:50px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:20px;
+}
+
+.btn{
+  padding:16px 34px;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:12px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#000;
+}
+
+.btn-gold:hover{
+  transform:translateY(-4px);
+  background:var(--gold2);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,0.15);
+  color:var(--text);
+}
+
+.btn-outline:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  transform:translateY(-4px);
+}
+
+.hero-stats{
+  margin-top:90px;
+  border-top:1px solid var(--border);
+  padding-top:50px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.stat h2{
+  font-size:52px;
+  color:var(--gold);
+  font-family:var(--display);
+}
+
+.stat p{
+  margin-top:8px;
+  font-size:11px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* SECTION */
+
+.section{
+  padding:160px 80px;
+}
+
+.section-title-small{
+  color:var(--gold);
+  font-family:var(--mono);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-size:11px;
+  margin-bottom:30px;
+}
+
+.section-title{
+  font-family:var(--display);
+  font-size:86px;
+  line-height:.9;
+  letter-spacing:-4px;
+}
+
+.section-title em{
+  color:var(--gold);
+  font-style:italic;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  margin-top:80px;
+}
+
+.about-text{
+  font-size:20px;
+  line-height:2;
+  color:var(--muted);
+}
+
+.about-text p{
+  margin-bottom:1.5rem;
+}
+
+.about-text p:last-child{
+  margin-bottom:0;
+}
+
+.about-text strong{
+  color:var(--text);
+}
+
+.about-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:50px;
+  border-radius:12px;
+}
+
+.about-card h3{
+  font-size:28px;
+  margin-bottom:24px;
+}
+
+.about-list{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.about-item{
+  display:flex;
+  justify-content:space-between;
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.about-item span:first-child{
+  color:var(--muted2);
+  font-size:12px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.about-item span:last-child{
+  font-weight:600;
+}
+
+/* SKILLS */
+
+.skills{
+  background:var(--bg2);
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-top:90px;
+}
+
+.skill-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:60px 45px;
+  border-radius:14px;
+  transition:.35s;
+}
+
+.skill-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(201,168,76,0.35);
+}
+
+.skill-number{
+  color:var(--gold);
+  font-family:var(--mono);
+  margin-bottom:30px;
+}
+
+.skill-title{
+  font-size:38px;
+  margin-bottom:20px;
+  font-family:var(--display);
+}
+
+.skill-desc{
+  color:var(--muted);
+  line-height:2;
+  margin-bottom:30px;
+}
+
+.skill-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill-tags span{
+  border:1px solid rgba(255,255,255,0.08);
+  padding:8px 14px;
+  border-radius:4px;
+  font-size:11px;
+  color:var(--gold);
+  font-family:var(--mono);
+}
+
+/* PROJECTS */
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  margin-top:90px;
+}
+
+.project-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:54px;
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.project-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(201,168,76,0.35);
+}
+
+.project-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+}
+
+.project-number{
+  font-family:var(--mono);
+  color:var(--gold);
+  margin-bottom:24px;
+}
+
+.project-title{
+  font-size:42px;
+  font-family:var(--display);
+  margin-bottom:20px;
+}
+
+.project-desc{
+  color:var(--muted);
+  line-height:2;
+  margin-bottom:32px;
+}
+
+.project-tech{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.project-tech span{
+  border:1px solid rgba(201,168,76,0.18);
+  padding:8px 14px;
+  border-radius:4px;
+  color:var(--gold);
+  font-size:11px;
+  font-family:var(--mono);
+}
+
+/* LEARNING */
+
+.learning-box{
+  margin-top:90px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:80px;
+}
+
+.learning-title{
+  font-size:64px;
+  line-height:.9;
+  font-family:var(--display);
+  margin-bottom:30px;
+}
+
+.learning-title em{
+  color:var(--gold);
+}
+
+.learning-desc{
+  color:var(--muted);
+  line-height:2;
+  font-size:18px;
+  max-width:760px;
+  margin-bottom:50px;
+}
+
+.learning-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.learning-tags span{
+  padding:12px 18px;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:4px;
+  color:var(--gold);
+  font-size:12px;
+  font-family:var(--mono);
+}
+
+/* CONTACT */
+
+.contact{
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.contact::before{
+  content:'';
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,rgba(201,168,76,0.12),transparent 70%);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.contact-title{
+  font-size:120px;
+  line-height:.82;
+  letter-spacing:-6px;
+  font-family:var(--display);
+  position:relative;
+}
+
+.contact-title em{
+  color:var(--gold);
+}
+
+.contact-text{
+  max-width:700px;
+  margin:40px auto;
+  color:var(--muted);
+  line-height:2;
+  font-size:18px;
+  position:relative;
+}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  position:relative;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:36px 80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.footer-left{
+  color:var(--muted2);
+  font-size:12px;
+  font-family:var(--mono);
+}
+
+.footer-links{
+  display:flex;
+  gap:30px;
+}
+
+.footer-links a{
+  color:var(--muted2);
+  text-decoration:none;
+  font-size:12px;
+  transition:.3s;
+}
+
+.footer-links a:hover{
+  color:var(--gold);
+}
+
+/* ANIMATIONS */
+
+.fade{
+  opacity:0;
+  transform:translateY(80px) scale(.96);
+  filter:blur(12px);
+  transition:
+    opacity 1.2s cubic-bezier(.16,1,.3,1),
+    transform 1.2s cubic-bezier(.16,1,.3,1),
+    filter 1.2s cubic-bezier(.16,1,.3,1);
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0px) scale(1);
+  filter:blur(0px);
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+  nav{
+    padding:22px 24px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:140px 24px 80px;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:70px;
+  }
+
+  .hero-title{
+    font-size:72px;
+  }
+
+  .hero-bg{
+    font-size:120px;
+  }
+
+  .hero-stats{
+    flex-wrap:wrap;
+    gap:40px;
+  }
+
+  .section{
+    padding:110px 24px;
+  }
+
+  .section-title{
+    font-size:58px;
+  }
+
+  .about-grid,
+  .skills-grid,
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+
+  .learning-box{
+    padding:40px 28px;
+  }
+
+  .learning-title{
+    font-size:48px;
+  }
+
+  .contact-title{
+    font-size:72px;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:18px;
+    text-align:center;
+    padding:30px 24px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Build By <span>Raghuveer</span>.</div>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-bg">RAGHUVEER</div>
+
+  <div class="hero-grid">
+
+    <div class="hero-left fade">
+
+      <div class="hero-tag">
+        FULL STACK ENGINEER · JAVA DEVELOPER
+      </div>
+
+      <h1 class="hero-title">
+        CHERUKURI<br>
+        <em>RAGHUVEER</em>
+      </h1>
+
+    </div>
+
+    <div class="hero-right fade">
+
+      <p class="hero-desc">
+        I design and build modern digital systems focused on clean architecture,
+        performance, scalability, and timeless user experience.
+        Specializing in Java backend engineering and modern web development.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-gold">View Work</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="hero-stats fade">
+
+    <div class="stat">
+      <h2>Java</h2>
+      <p>Core Stack</p>
+    </div>
+
+    <div class="stat">
+      <h2>React</h2>
+      <p>Frontend</p>
+    </div>
+
+    <div class="stat">
+      <h2>Spring</h2>
+      <p>Backend</p>
+    </div>
+
+    <div class="stat">
+      <h2>∞</h2>
+      <p>Learning</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+  <div class="section-title-small fade">About Me</div>
+
+  <h2 class="section-title fade">
+    The developer<br>
+    behind the <em>systems.</em>
+  </h2>
+
+  <div class="about-grid">
+
+    <div class="about-text fade">
+      <p>I'm <strong>Cherukuri Raghuveer</strong>, an <strong>app developer from Andhra Pradesh</strong> passionate about building modern, smooth, and user-friendly mobile applications. My focus is on <strong>Java, Kotlin, Android development</strong>, and improving my problem-solving skills through <strong>DSA</strong>.</p>
+      <p>I enjoy creating apps with <strong>clean design</strong>, <strong>better user experience</strong>, and <strong>efficient performance</strong> while continuously learning new technologies and improving my development skills every day.</p>
+    </div>
+
+    <div class="about-card fade">
+
+      <h3>Developer Profile</h3>
+
+      <div class="about-list">
+
+        <div class="about-item">
+          <span>Name</span>
+          <span>Cherukuri Raghuveer</span>
+        </div>
+
+        <div class="about-item">
+          <span>Role</span>
+          <span>Full Stack Developer</span>
+        </div>
+
+        <div class="about-item">
+          <span>Primary Stack</span>
+          <span>Java + Spring Boot</span>
+        </div>
+
+        <div class="about-item">
+          <span>Frontend</span>
+          <span>React + JavaScript</span>
+        </div>
+
+        <div class="about-item">
+          <span>Location</span>
+          <span>Andhra Pradesh, India</span>
+        </div>
+
+        <div class="about-item">
+          <span>Status</span>
+          <span style="color:var(--gold)">Open to Opportunities</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="section skills" id="skills">
+
+  <div class="section-title-small fade">Expertise</div>
+
+  <h2 class="section-title fade">
+    Building modern<br>
+    <em>digital systems.</em>
+  </h2>
+
+  <div class="skills-grid">
+
+    <div class="skill-card fade">
+
+      <div class="skill-number">01</div>
+
+      <div class="skill-title">Java</div>
+
+      <div class="skill-desc">
+       Building efficient and scalable applications using Java, object-oriented programming, 
+       data structures & algorithms, and clean coding principles.
+      </div>
+
+      <div class="skill-tags">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Data Structures and Algorithms</span>
+        <span>REST API</span>
+      </div>
+
+    </div>
+
+    <div class="skill-card fade">
+
+      <div class="skill-number">02</div>
+
+      <div class="skill-title">Frontend</div>
+
+      <div class="skill-desc">
+        Creating premium interfaces with responsive layouts,
+        modern animations, React components, and smooth user experiences.
+      </div>
+
+      <div class="skill-tags">
+        <span>React</span>
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Tailwind</span>
+      </div>
+
+    </div>
+
+    <div class="skill-card fade">
+
+      <div class="skill-number">03</div>
+
+      <div class="skill-title">Databases</div>
+
+      <div class="skill-desc">
+        Designing optimized schemas and handling data efficiently
+        with SQL systems, ORM tools, and scalable backend integration.
+      </div>
+
+      <div class="skill-tags">
+        <span>MySQL</span>
+        <span>PostgreSQL</span>
+        <span>Git</span>
+        <span>JPA</span>
+        <span>SQL</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="section" id="projects">
+
+  <div class="section-title-small fade">Selected Work</div>
+
+  <h2 class="section-title fade">
+    Projects that<br>
+    <em>stand out.</em>
+  </h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card fade">
+
+      <div class="project-number">PROJECT 01</div>
+
+      <div class="project-title">E-Commerce Platform</div>
+
+      <div class="project-desc">
+        Full-stack e-commerce application with secure authentication,
+        order management, admin dashboard, responsive UI,
+        and scalable Spring Boot backend architecture.
+      </div>
+
+      <div class="project-tech">
+        <span>Spring Boot</span>
+        <span>React</span>
+        <span>JWT</span>
+        <span>MySQL</span>
+      </div>
+
+    </div>
+
+    <div class="project-card fade">
+
+      <div class="project-number">PROJECT 02</div>
+
+      <div class="project-title">Task Management System</div>
+
+      <div class="project-desc">
+        Real-time task management application featuring team collaboration,
+        workflow tracking, priority systems, and dynamic frontend interactions.
+      </div>
+
+      <div class="project-tech">
+        <span>Java</span>
+        <span>Spring</span>
+        <span>PostgreSQL</span>
+        <span>JavaScript</span>
+      </div>
+
+    </div>
+
+    <div class="project-card fade">
+
+      <div class="project-number">PROJECT 03</div>
+
+      <div class="project-title">Student Portal API</div>
+
+      <div class="project-desc">
+        REST API for academic management with role-based authentication,
+        attendance tracking, grade systems, and Swagger documentation.
+      </div>
+
+      <div class="project-tech">
+        <span>Spring Boot</span>
+        <span>JPA</span>
+        <span>Swagger</span>
+        <span>MySQL</span>
+      </div>
+
+    </div>
+
+    <div class="project-card fade">
+
+      <div class="project-number">PROJECT 04</div>
+
+      <div class="project-title">Portfolio Website</div>
+
+      <div class="project-desc">
+        Premium animated portfolio with advanced spacing,
+        typography hierarchy, elegant transitions,
+        and responsive modern design.
+      </div>
+
+      <div class="project-tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>UI Design</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- LEARNING -->
+
+<section class="section">
+
+  <div class="section-title-small fade">Currently Learning</div>
+
+  <div class="learning-box fade">
+
+    <div class="learning-title">
+      Kotlin &<br>
+      <em>Android Development</em>
+    </div>
+
+    <div class="learning-desc">
+      Expanding my Java foundation into native Android development.
+      Learning Jetpack Compose, MVVM architecture, Room Database,
+      Kotlin Coroutines, and modern Android app engineering.
+    </div>
+
+    <div class="learning-tags">
+      <span>Kotlin</span>
+      <span>Jetpack Compose</span>
+      <span>MVVM</span>
+      <span>Coroutines</span>
+      <span>Room DB</span>
+      <span>Retrofit</span>
+      <span>Android SDK</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+  <div class="section-title-small fade">Let's Connect</div>
+
+  <h2 class="contact-title fade">
+    Build something<br>
+    <em>great.</em>
+  </h2>
+
+  <div class="contact-text fade">
+    Open to collaborations, freelance opportunities,
+    internships, and software engineering roles.
+    Let's create impactful digital experiences together.
+  </div>
+
+  <div class="contact-buttons fade">
+
+    <a href="mailto:sairaghuveer85@gmail.com" class="btn btn-gold">
+      Email Me
+    </a>
+
+    <a href="https://github.com/sairaghuveer85-cpu" target="_blank" class="btn btn-outline">
+      GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/in/raghuveer-cherukuri-95a99840a/" target="_blank" class="btn btn-outline">
+      LinkedIn
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-left">
+    © 2026 Cherukuri Raghuveer — Crafted with precision.
+  </div>
+
+  <div class="footer-links">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Instagram</a>
+  </div>
+
+</footer>
+
+<script>
+
+// APPLE STYLE SCROLL REVEAL
+
+const observer = new IntersectionObserver((entries)=>{
+
+  entries.forEach((entry)=>{
+
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+
+  });
+
+},{threshold:0.12});
+
+const hiddenElements = document.querySelectorAll('.fade');
+
+hiddenElements.forEach((el)=>observer.observe(el));
+
+// PREMIUM PARALLAX EFFECT
+
+window.addEventListener('scroll',()=>{
+
+  const scrollY = window.scrollY;
+
+  const heroBg = document.querySelector('.hero-bg');
+
+  heroBg.style.transform = `translateY(${scrollY * 0.25}px)`;
+
+});
+
+// SMOOTH NAVIGATION
+
+const links = document.querySelectorAll('a[href^="#"]');
+
+links.forEach(link=>{
+
+  link.addEventListener('click',(e)=>{
+
+    e.preventDefault();
+
+    const target = document.querySelector(link.getAttribute('href'));
+
+    if(target){
+
+      window.scrollTo({
+        top:target.offsetTop - 80,
+        behavior:'smooth'
+      });
+
+    }
+
+  });
+
+});
+
+// APPLE STYLE MOUSE GLOW
+
+const glow = document.createElement('div');
+
+glow.style.position = 'fixed';
+glow.style.width = '500px';
+glow.style.height = '500px';
+glow.style.borderRadius = '50%';
+glow.style.pointerEvents = 'none';
+glow.style.background = 'radial-gradient(circle, rgba(201,168,76,0.10), transparent 70%)';
+glow.style.transform = 'translate(-50%, -50%)';
+glow.style.zIndex = '0';
+glow.style.transition = 'transform 0.08s linear';
+
+document.body.appendChild(glow);
+
+window.addEventListener('mousemove',(e)=>{
+
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+
+});
+
+// PREMIUM CARD HOVER
+
+const cards = document.querySelectorAll('.skill-card, .project-card, .about-card');
+
+cards.forEach(card=>{
+
+  card.addEventListener('mousemove',(e)=>{
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 8;
+    const rotateX = ((y / rect.height) - 0.5) * -8;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+
+  });
+
+  card.addEventListener('mouseleave',()=>{
+
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+
+  });
+
+});
+
+// HERO FADE TEXT
+
+const heroTitle = document.querySelector('.hero-title');
+
+window.addEventListener('scroll',()=>{
+
+  const value = window.scrollY;
+
+  heroTitle.style.opacity = 1 - value / 700;
+  heroTitle.style.transform = `translateY(${value * 0.15}px)`;
+
+});
+
+</script>
+
+</body>
+</html>
+```
