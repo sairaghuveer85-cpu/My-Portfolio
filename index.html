@@ -1189,6 +1189,374 @@ window.addEventListener('scroll',()=>{
 });
 
 </script>
+```html
+<!-- =========================================
+ADD THIS ENTIRE SECTION AT THE VERY END
+OF YOUR CURRENT CSS
+========================================= -->
+
+<style>
+
+/* =========================================
+   ADVANCED MOBILE OPTIMIZATION
+========================================= */
+
+@media (max-width: 768px){
+
+  html,body{
+    overflow-x:hidden;
+    width:100%;
+  }
+
+  body{
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* NAVBAR */
+
+  nav{
+    padding:16px 18px;
+    height:auto;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  /* HERO */
+
+  .hero{
+    padding:120px 20px 70px;
+    min-height:auto;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .hero-title{
+    font-size:52px;
+    line-height:.92;
+    letter-spacing:-2px;
+    word-break:break-word;
+  }
+
+  .hero-tag{
+    font-size:10px;
+    margin-bottom:20px;
+  }
+
+  .hero-desc{
+    font-size:15px;
+    line-height:1.8;
+    padding-left:16px;
+    margin-bottom:30px;
+  }
+
+  .hero-bg{
+    font-size:90px;
+    left:-10px;
+    bottom:-30px;
+  }
+
+  /* BUTTONS */
+
+  .hero-buttons,
+  .contact-buttons{
+    flex-direction:column;
+    width:100%;
+    gap:14px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+    padding:15px 20px;
+    font-size:11px;
+  }
+
+  /* STATS */
+
+  .hero-stats{
+    gap:25px;
+    justify-content:flex-start;
+    margin-top:50px;
+    padding-top:30px;
+  }
+
+  .stat h2{
+    font-size:36px;
+  }
+
+  .stat p{
+    font-size:10px;
+  }
+
+  /* SECTIONS */
+
+  .section{
+    padding:80px 20px;
+  }
+
+  .section-title{
+    font-size:44px;
+    line-height:1;
+    letter-spacing:-2px;
+  }
+
+  .section-title-small{
+    font-size:10px;
+    margin-bottom:20px;
+  }
+
+  /* ABOUT */
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+    margin-top:50px;
+  }
+
+  .about-text{
+    font-size:16px;
+    line-height:1.9;
+  }
+
+  .about-card{
+    padding:28px 22px;
+  }
+
+  .about-item{
+    gap:14px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  /* SKILLS */
+
+  .skills-grid{
+    grid-template-columns:1fr;
+    margin-top:50px;
+    gap:20px;
+  }
+
+  .skill-card{
+    padding:35px 24px;
+  }
+
+  .skill-title{
+    font-size:28px;
+  }
+
+  .skill-desc{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  /* PROJECTS */
+
+  .projects-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+    margin-top:50px;
+  }
+
+  .project-card{
+    padding:32px 24px;
+  }
+
+  .project-title{
+    font-size:30px;
+    line-height:1;
+  }
+
+  .project-desc{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  /* LEARNING */
+
+  .learning-box{
+    padding:35px 22px;
+    margin-top:50px;
+  }
+
+  .learning-title{
+    font-size:38px;
+    line-height:1;
+  }
+
+  .learning-desc{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  /* CONTACT */
+
+  .contact-title{
+    font-size:52px;
+    line-height:.95;
+    letter-spacing:-2px;
+  }
+
+  .contact-text{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  /* FOOTER */
+
+  footer{
+    padding:28px 20px;
+    flex-direction:column;
+    gap:18px;
+    text-align:center;
+  }
+
+  .footer-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+  }
+
+  /* PERFORMANCE FIXES */
+
+  .fade{
+    transform:none !important;
+    filter:none !important;
+  }
+
+  .fade.show{
+    transform:none !important;
+  }
+
+  /* DISABLE HEAVY EFFECTS ON MOBILE */
+
+  .hero-left::before{
+    display:none;
+  }
+
+}
+
+/* EXTRA SMALL DEVICES */
+
+@media (max-width:480px){
+
+  .hero-title{
+    font-size:42px;
+  }
+
+  .section-title{
+    font-size:36px;
+  }
+
+  .contact-title{
+    font-size:42px;
+  }
+
+  .project-title{
+    font-size:26px;
+  }
+
+  .learning-title{
+    font-size:32px;
+  }
+
+}
+
+</style>
+
+
+
+<!-- =========================================
+REPLACE YOUR CURRENT MOUSE GLOW JS WITH THIS
+========================================= -->
+
+<script>
+
+if(window.innerWidth > 768){
+
+const glow = document.createElement('div');
+
+glow.style.position = 'fixed';
+glow.style.width = '500px';
+glow.style.height = '500px';
+glow.style.borderRadius = '50%';
+glow.style.pointerEvents = 'none';
+glow.style.background =
+'radial-gradient(circle, rgba(201,168,76,0.10), transparent 70%)';
+
+glow.style.transform = 'translate(-50%, -50%)';
+glow.style.zIndex = '0';
+glow.style.transition = 'transform 0.08s linear';
+
+document.body.appendChild(glow);
+
+window.addEventListener('mousemove',(e)=>{
+
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+
+});
+
+}
+
+</script>
+
+
+
+<!-- =========================================
+REPLACE YOUR CURRENT CARD HOVER JS WITH THIS
+========================================= -->
+
+<script>
+
+if(window.innerWidth > 768){
+
+const cards = document.querySelectorAll(
+'.skill-card, .project-card, .about-card'
+);
+
+cards.forEach(card=>{
+
+  card.addEventListener('mousemove',(e)=>{
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 8;
+    const rotateX = ((y / rect.height) - 0.5) * -8;
+
+    card.style.transform =
+    `perspective(1000px)
+     rotateX(${rotateX}deg)
+     rotateY(${rotateY}deg)
+     translateY(-8px)`;
+
+  });
+
+  card.addEventListener('mouseleave',()=>{
+
+    card.style.transform =
+    'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+
+  });
+
+});
+
+}
+
+</script>
+```
+
 
 </body>
 </html>
